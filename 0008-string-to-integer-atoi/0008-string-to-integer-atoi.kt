@@ -35,7 +35,7 @@ class Solution {
         
         if (startIndex < 0) return 0
         
-        val numberAsString = s.substring(startIndex, i)
+        val numberAsString = s.slice(startIndex..(i-1))
         
         var number = numberAsString.toIntOrNull()
         
