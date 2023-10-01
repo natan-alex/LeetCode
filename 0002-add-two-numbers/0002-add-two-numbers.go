@@ -6,8 +6,6 @@
  * }
  */
 
-import ("fmt")
-
 func insertNode(root *ListNode, val int) *ListNode {
     newNode := &ListNode { Val: val, Next: nil }
 
