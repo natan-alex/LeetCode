@@ -31,30 +31,22 @@ func addTwoNumbers(l1 *ListNode, l2 *ListNode) *ListNode {
     var result *ListNode = nil
 
     for l1 != nil || l2 != nil {
-        l1Val := 0
-        l2Val := 0
-
+        sum := carry
+        
         if l1 != nil {
-            l1Val = l1.Val
+            sum += l1.Val
+            l1 = l1.Next
         }
-
+        
         if l2 != nil {
-            l2Val = l2.Val
+            sum += l2.Val
+            l2 = l2.Next
         }
-
-        sum := l1Val + l2Val + carry
+        
         val := sum % factor
         carry = sum / factor
 
         result = insertNode(result, val)
-
-        if l1 != nil {
-            l1 = l1.Next
-        }
-
-        if l2 != nil {
-            l2 = l2.Next
-        }
     }
 
     if carry != 0 {
